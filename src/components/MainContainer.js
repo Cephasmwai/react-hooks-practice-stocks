@@ -1,22 +1,17 @@
-import React from "react";
-import StockContainer from "./StockContainer";
-import PortfolioContainer from "./PortfolioContainer";
-import SearchBar from "./SearchBar";
+import React from 'react';
+import StockContainer from './StockContainer';
 
-function MainContainer() {
+const MainContainer = ({ stocks, buyStock }) => {
   return (
     <div>
-      <SearchBar />
-      <div className="row">
-        <div className="col-8">
-          <StockContainer />
-        </div>
-        <div className="col-4">
-          <PortfolioContainer />
-        </div>
-      </div>
+      <h2>Available Stocks</h2>
+      <StockContainer 
+        stocks={stocks} 
+        actionOnStock={buyStock} 
+        isPortfolio={false} 
+      />
     </div>
   );
-}
+};
 
 export default MainContainer;

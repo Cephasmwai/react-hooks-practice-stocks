@@ -1,15 +1,17 @@
-import React from "react";
-import Stock from "./Stock";
+import React from 'react';
+import StockContainer from './StockContainer';
 
-function PortfolioContainer() {
+const PortfolioContainer = ({ portfolio, sellStock }) => {
   return (
     <div>
-      <h2>My Portfolio</h2>
-      {
-        //render your portfolio stocks here
-      }
+      <h2>Your Portfolio</h2>
+      <StockContainer 
+        stocks={portfolio} 
+        actionOnStock={sellStock} 
+        isPortfolio={true} 
+      />
     </div>
   );
-}
+};
 
 export default PortfolioContainer;
